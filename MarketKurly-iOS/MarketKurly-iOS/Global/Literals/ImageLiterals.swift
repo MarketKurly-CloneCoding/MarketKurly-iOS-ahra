@@ -18,4 +18,11 @@ enum ImageLiterals {
         static var ic_mypage: UIImage { .load(name: "mypage") }
         static var ic_mypageOn: UIImage { .load(name: "mypage_on") }
     }
+    
+    enum NavigationBar {
+        static var img_logo: UIImage { .load(name: "logo") }
+        static var ic_navi: UIImage { .load(name: "navi") }
+        static var ic_cart: UIImage { .load(name: "cart") }
+        static var ic_back: UIImage { .load(name: "back") }
+    }
 }
