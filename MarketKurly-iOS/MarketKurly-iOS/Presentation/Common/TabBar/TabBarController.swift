@@ -50,8 +50,8 @@ private extension TabBarController {
         let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10, weight: .regular)]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
 
-        tabBar.tintColor = .PrimaryPurple
-        tabBar.unselectedItemTintColor = .Black
+        tabBar.tintColor = .KurlyPurple
+        tabBar.unselectedItemTintColor = .KurlyBlack
         
         return tab
     }
@@ -61,6 +61,7 @@ private extension TabBarController {
         
         lineView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(tabBar.snp.top)
             $0.height.equalTo(1)
         }
     }
@@ -74,7 +75,7 @@ private extension TabBarController {
             renderingMode: .alwaysOriginal
         )
         let category = makeTabBar(
-            viewController: ViewController(),
+            viewController: DetailViewController(),
             title: "카테고리",
             tabBarImg: ImageLiterals.TabBar.ic_category,
             tabBarSelectedImg: ImageLiterals.TabBar.ic_categoryOn,
@@ -97,7 +98,7 @@ private extension TabBarController {
 
         let tabs = [home, category, search, mypage]
         self.setViewControllers(tabs, animated: false)
-        tabBar.backgroundColor = .White
+        tabBar.backgroundColor = .KurlyWhite
         tabBar.isTranslucent = false
     }
 }

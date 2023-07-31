@@ -13,15 +13,15 @@ extension UIColor {
         return UIColor(hex: "#DDDDDD")
     }
     
-    static var PrimaryPurple: UIColor {
+    static var KurlyPurple: UIColor {
         return UIColor(hex: "#5F0080")
     }
     
-    static var White: UIColor {
+    static var KurlyWhite: UIColor {
         return UIColor(hex: "#FFFFFF")
     }
     
-    static var Black: UIColor {
+    static var KurlyBlack: UIColor {
         return UIColor(hex: "#000000")
     }
 }
