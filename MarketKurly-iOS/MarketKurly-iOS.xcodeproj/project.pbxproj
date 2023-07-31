@@ -24,6 +24,9 @@
 		A43BF9EB2A7646A900DCF7B8 /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9EA2A7646A900DCF7B8 /* HomeEntity.swift */; };
 		A43BF9ED2A7646B000DCF7B8 /* DetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9EC2A7646B000DCF7B8 /* DetailEntity.swift */; };
 		A43BF9EF2A7646B800DCF7B8 /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9EE2A7646B800DCF7B8 /* SearchEntity.swift */; };
+		A43BF9F82A7650AE00DCF7B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A43BF9F72A7650AE00DCF7B8 /* SnapKit */; };
+		A43BF9FB2A7650B700DCF7B8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A43BF9FA2A7650B700DCF7B8 /* Then */; };
+		A43BF9FD2A77BC1B00DCF7B8 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9FC2A77BC1B00DCF7B8 /* NSObject+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,7 @@
 		A43BF9EA2A7646A900DCF7B8 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		A43BF9EC2A7646B000DCF7B8 /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
 		A43BF9EE2A7646B800DCF7B8 /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
+		A43BF9FC2A77BC1B00DCF7B8 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43BF9F82A7650AE00DCF7B8 /* SnapKit in Frameworks */,
+				A43BF9FB2A7650B700DCF7B8 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				A43BF9D42A7645A200DCF7B8 /* UIView+.swift */,
+				A43BF9FC2A77BC1B00DCF7B8 /* NSObject+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -252,6 +259,10 @@
 			dependencies = (
 			);
 			name = "MarketKurly-iOS";
+			packageProductDependencies = (
+				A43BF9F72A7650AE00DCF7B8 /* SnapKit */,
+				A43BF9FA2A7650B700DCF7B8 /* Then */,
+			);
 			productName = "MarketKurly-iOS";
 			productReference = A43BF9B02A741E3C00DCF7B8 /* MarketKurly-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +291,10 @@
 				Base,
 			);
 			mainGroup = A43BF9A72A741E3C00DCF7B8;
+			packageReferences = (
+				A43BF9F62A7650AE00DCF7B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A43BF9F92A7650B700DCF7B8 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = A43BF9B12A741E3C00DCF7B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -317,6 +332,7 @@
 				A43BF9B42A741E3C00DCF7B8 /* AppDelegate.swift in Sources */,
 				A43BF9E12A76463B00DCF7B8 /* Home.swift in Sources */,
 				A43BF9DD2A76460D00DCF7B8 /* Font.swift in Sources */,
+				A43BF9FD2A77BC1B00DCF7B8 /* NSObject+.swift in Sources */,
 				A43BF9E32A76464000DCF7B8 /* Detail.swift in Sources */,
 				A43BF9D92A7645C600DCF7B8 /* UICollectionViewRegisterable.swift in Sources */,
 				A43BF9B62A741E3C00DCF7B8 /* SceneDelegate.swift in Sources */,
@@ -538,6 +554,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A43BF9F62A7650AE00DCF7B8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A43BF9F92A7650B700DCF7B8 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A43BF9F72A7650AE00DCF7B8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A43BF9F62A7650AE00DCF7B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		A43BF9FA2A7650B700DCF7B8 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A43BF9F92A7650B700DCF7B8 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A43BF9A82A741E3C00DCF7B8 /* Project object */;
 }
