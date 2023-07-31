@@ -26,6 +26,7 @@
 		A43BF9EF2A7646B800DCF7B8 /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9EE2A7646B800DCF7B8 /* SearchEntity.swift */; };
 		A43BF9F82A7650AE00DCF7B8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A43BF9F72A7650AE00DCF7B8 /* SnapKit */; };
 		A43BF9FB2A7650B700DCF7B8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A43BF9FA2A7650B700DCF7B8 /* Then */; };
+		A43BF9FD2A77BC1B00DCF7B8 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9FC2A77BC1B00DCF7B8 /* NSObject+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A43BF9EA2A7646A900DCF7B8 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		A43BF9EC2A7646B000DCF7B8 /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
 		A43BF9EE2A7646B800DCF7B8 /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
+		A43BF9FC2A77BC1B00DCF7B8 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				A43BF9D42A7645A200DCF7B8 /* UIView+.swift */,
+				A43BF9FC2A77BC1B00DCF7B8 /* NSObject+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				A43BF9B42A741E3C00DCF7B8 /* AppDelegate.swift in Sources */,
 				A43BF9E12A76463B00DCF7B8 /* Home.swift in Sources */,
 				A43BF9DD2A76460D00DCF7B8 /* Font.swift in Sources */,
+				A43BF9FD2A77BC1B00DCF7B8 /* NSObject+.swift in Sources */,
 				A43BF9E32A76464000DCF7B8 /* Detail.swift in Sources */,
 				A43BF9D92A7645C600DCF7B8 /* UICollectionViewRegisterable.swift in Sources */,
 				A43BF9B62A741E3C00DCF7B8 /* SceneDelegate.swift in Sources */,
