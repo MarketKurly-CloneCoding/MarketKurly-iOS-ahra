@@ -39,6 +39,7 @@
 		A43BFA2B2A78161200DCF7B8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA2A2A78161200DCF7B8 /* SearchView.swift */; };
 		A43BFA2F2A781AF000DCF7B8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA2E2A781AF000DCF7B8 /* DetailView.swift */; };
 		A43BFA312A781AFE00DCF7B8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA302A781AFE00DCF7B8 /* DetailViewController.swift */; };
+		A43BFA332A78BED000DCF7B8 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA322A78BED000DCF7B8 /* TabBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		A43BFA2A2A78161200DCF7B8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A43BFA2E2A781AF000DCF7B8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		A43BFA302A781AFE00DCF7B8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A43BFA322A78BED000DCF7B8 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 		A43BF9FF2A77C11100DCF7B8 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				A43BFA322A78BED000DCF7B8 /* TabBarItem.swift */,
 				A43BFA022A77C14E00DCF7B8 /* TabBarController.swift */,
 			);
 			path = TabBar;
@@ -448,6 +451,7 @@
 				A43BF9B42A741E3C00DCF7B8 /* AppDelegate.swift in Sources */,
 				A43BF9E12A76463B00DCF7B8 /* Home.swift in Sources */,
 				A43BFA2B2A78161200DCF7B8 /* SearchView.swift in Sources */,
+				A43BFA332A78BED000DCF7B8 /* TabBarItem.swift in Sources */,
 				A43BF9DD2A76460D00DCF7B8 /* Font.swift in Sources */,
 				A43BF9FD2A77BC1B00DCF7B8 /* NSObject+.swift in Sources */,
 				A43BFA0E2A77C81B00DCF7B8 /* UIImage+.swift in Sources */,

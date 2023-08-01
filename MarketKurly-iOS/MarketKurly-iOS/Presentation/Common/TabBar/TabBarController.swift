@@ -12,8 +12,10 @@ import SnapKit
 class TabBarController: UITabBarController {
     
     // MARK: - UI Components
+    
+    private var tabs: [UIViewController] = []
         
-    private let TabBarHeight: CGFloat = 48
+    private let TabBarHeight: CGFloat = SizeLiterals.Screen.screenHeight * 48 / 812
 
     private let lineView: UIView = {
         let lineView = UIView()
@@ -27,6 +29,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         setLayout()
+        setTabBarItem()
         setTabBar()
     }
 }
@@ -34,27 +37,6 @@ class TabBarController: UITabBarController {
 // MARK: - Extensions
 
 private extension TabBarController {
-    
-    func makeTabBar(viewController: UIViewController,
-                    title: String,
-                    tabBarImg: UIImage,
-                    tabBarSelectedImg: UIImage,
-                    renderingMode: UIImage.RenderingMode) -> UIViewController {
-
-        let tab = UINavigationController(rootViewController: viewController)
-        tab.isNavigationBarHidden = true
-        tab.tabBarItem = UITabBarItem(title: title,
-                                      image: tabBarImg.withRenderingMode(renderingMode),
-                                      selectedImage: tabBarSelectedImg.withRenderingMode(renderingMode))
-
-        let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10, weight: .regular)]
-        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
-
-        tabBar.tintColor = .KurlyPurple
-        tabBar.unselectedItemTintColor = .KurlyBlack
-        
-        return tab
-    }
     
     func setLayout() {
         tabBar.addSubview(lineView)
@@ -66,39 +48,27 @@ private extension TabBarController {
         }
     }
     
+    func setTabBarItem() {
+        tabs = [
+            HomeViewController(),
+            DetailViewController(),
+            SearchViewController(),
+            ViewController()
+        ]
+        
+        TabBarItemType.allCases.forEach {
+            tabs[$0.rawValue].tabBarItem = $0.setTabBarItem()
+            setViewControllers(tabs, animated: false)
+        }
+    }
+    
     func setTabBar() {
-        let home = makeTabBar(
-            viewController: HomeViewController(),
-            title: "홈",
-            tabBarImg: ImageLiterals.TabBar.ic_home,
-            tabBarSelectedImg: ImageLiterals.TabBar.ic_homeOn,
-            renderingMode: .alwaysOriginal
-        )
-        let category = makeTabBar(
-            viewController: DetailViewController(),
-            title: "카테고리",
-            tabBarImg: ImageLiterals.TabBar.ic_category,
-            tabBarSelectedImg: ImageLiterals.TabBar.ic_categoryOn,
-            renderingMode: .alwaysOriginal
-        )
-        let search = makeTabBar(
-            viewController: SearchViewController(),
-            title: "검색",
-            tabBarImg: ImageLiterals.TabBar.ic_search,
-            tabBarSelectedImg: ImageLiterals.TabBar.ic_searchOn,
-            renderingMode: .alwaysOriginal
-        )
-        let mypage = makeTabBar(
-            viewController: ViewController(),
-            title: "마이컬리",
-            tabBarImg: ImageLiterals.TabBar.ic_mypage,
-            tabBarSelectedImg: ImageLiterals.TabBar.ic_mypageOn,
-            renderingMode: .alwaysOriginal
-        )
-
-        let tabs = [home, category, search, mypage]
-        self.setViewControllers(tabs, animated: false)
         tabBar.backgroundColor = .KurlyWhite
         tabBar.isTranslucent = false
+        tabBar.tintColor = .KurlyPurple
+        tabBar.unselectedItemTintColor = .KurlyBlack
+        
+        let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10, weight: .regular)]
+        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
     }
 }
