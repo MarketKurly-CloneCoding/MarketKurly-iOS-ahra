@@ -16,17 +16,17 @@ final class HomeMenu: UIView {
     private var menuCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumInteritemSpacing = 1
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.isScrollEnabled = false
         return collectionView
     }()
     
     private var underLine: UIView = {
         let view = UIView()
-        view.backgroundColor = .clear
+        view.backgroundColor = .KurlyPurple
         return view
     }()
     
@@ -46,10 +46,6 @@ final class HomeMenu: UIView {
         setCollectionView()
     }
     
-    override func draw(_ rect: CGRect) {
-        self.isSelected = 0
-    }
-    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -67,6 +63,13 @@ extension HomeMenu {
     }
     
     func setLayout() {
+        
+        underLine.snp.makeConstraints {
+            $0.leading.equalTo(menuCollectionView.snp.leading)
+            $0.bottom.equalTo(menuCollectionView.snp.bottom)
+            $0.width.equalTo(menuLabels[0].calcuateWidth(addPadding: 20))
+            $0.height.equalTo(3)
+        }
         
         divideLine.snp.makeConstraints {
             $0.bottom.equalTo(menuCollectionView.snp.bottom)
@@ -88,6 +91,15 @@ extension HomeMenu {
     func setCollectionView() {
         menuCollectionView.register(HomeMenuCollectionViewCell.self, forCellWithReuseIdentifier: HomeMenuCollectionViewCell.identifier)
     }
+    
+    func updateUnderLine(index: Int, padding: CGFloat) {
+        underLine.snp.remakeConstraints {
+            $0.leading.equalToSuperview().inset(padding+16)
+            $0.bottom.equalTo(menuCollectionView.snp.bottom)
+            $0.width.equalTo(menuLabels[index].calcuateWidth(addPadding: 20))
+            $0.height.equalTo(3)
+        }
+    }
 }
 
 extension HomeMenu: UICollectionViewDataSource {
@@ -103,10 +115,17 @@ extension HomeMenu: UICollectionViewDataSource {
 }
 
 extension HomeMenu: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout,
+           let attributes = layout.layoutAttributesForItem(at: indexPath) {
+            let leading = attributes.frame.origin.x
+            updateUnderLine(index: indexPath.item, padding: leading)
+        }
+    }
 }
 
 extension HomeMenu: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: menuLabels[indexPath.row].calcuateWidth(addPadding: 10), height: menuCollectionView.frame.height)
+        return CGSize(width: menuLabels[indexPath.item].calcuateWidth(addPadding: 20), height: menuCollectionView.frame.height)
     }
 }
