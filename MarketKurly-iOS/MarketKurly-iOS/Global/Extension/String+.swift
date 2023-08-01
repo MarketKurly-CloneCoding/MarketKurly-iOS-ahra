@@ -15,7 +15,7 @@ extension String {
      func calcuateWidth(addPadding: CGFloat = 0) -> CGFloat {
          let label = UILabel()
          label.text = self
-         label.font = .systemFont(ofSize: 16, weight: .regular)
+         label.font = .systemFont(ofSize: 15, weight: .regular)
          label.sizeToFit()
          return label.frame.width + addPadding
      }

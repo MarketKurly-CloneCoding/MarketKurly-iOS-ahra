@@ -57,7 +57,7 @@ extension HomeMenuCollectionViewCell {
     
     func setLayout() {
         menuTitleLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview().inset(10)
+            $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
         }
     }
