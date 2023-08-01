@@ -18,6 +18,11 @@ final class HomeView: UIView {
         return view
     }()
     
+    lazy var homeMenuView: HomeMenu = {
+        let view = HomeMenu()
+        return view
+    }()
+    
     // MARK: - Life Cycles
     
     override init(frame: CGRect) {
@@ -40,12 +45,18 @@ private extension HomeView {
     }
     
     func setLayout() {
-        self.addSubview(navigationBarView)
+        self.addSubviews(navigationBarView, homeMenuView)
         
         navigationBarView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 94 / 812)
+        }
+        
+        homeMenuView.snp.makeConstraints {
+            $0.top.equalTo(navigationBarView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(44)
         }
     }
 }
