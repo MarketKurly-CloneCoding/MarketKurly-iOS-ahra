@@ -14,8 +14,6 @@ class TabBarController: UITabBarController {
     // MARK: - UI Components
     
     private var tabs: [UIViewController] = []
-        
-    private let TabBarHeight: CGFloat = SizeLiterals.Screen.screenHeight * 48 / 812
 
     private let lineView: UIView = {
         let lineView = UIView()
