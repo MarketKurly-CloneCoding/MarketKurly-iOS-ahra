@@ -25,7 +25,7 @@ final class HomeMenu: UIView {
     
     // MARK: - UI Components
     
-    private var menuCollectionView: UICollectionView = {
+    var menuCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumInteritemSpacing = 1
@@ -116,6 +116,10 @@ extension HomeMenu {
             $0.height.equalTo(3)
         }
     }
+    
+    func selectMenu(at index: Int) {
+        menuCollectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+    }
 }
 
 extension HomeMenu: UICollectionViewDataSource {
@@ -127,6 +131,7 @@ extension HomeMenu: UICollectionViewDataSource {
         guard let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: HomeMenuCollectionViewCell.identifier, for: indexPath) as? HomeMenuCollectionViewCell else { return HomeMenuCollectionViewCell()}
         cell.title = menuLabels[indexPath.item]
         cell.setCellSelected(isSelected: selectedIndex == indexPath.item)
+        menuCollectionView.selectItem(at: IndexPath(item: selectedIndex, section: 0), animated: false, scrollPosition: .centeredHorizontally)
         return cell
     }
 }
@@ -140,7 +145,7 @@ extension HomeMenu: UICollectionViewDelegate {
         }
         selectedIndex = indexPath.item
         homeMenuDelegate?.didSelectMenu(at: indexPath.item)
-        collectionView.reloadData()
+        selectMenu(at: indexPath.item)
     }
 }
 

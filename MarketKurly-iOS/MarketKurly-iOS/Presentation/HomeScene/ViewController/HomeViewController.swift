@@ -91,6 +91,17 @@ extension HomeViewController: UIPageViewControllerDelegate {
         guard let currentVC = pageViewController.viewControllers?.first,
               let currentIndex = dataViewController.firstIndex(of: currentVC) else { return }
         currentPage = currentIndex
+        
+        if completed {
+            if let selectedViewController = pageViewController.viewControllers?.first,
+               let selectedIndex = dataViewController.firstIndex(of: selectedViewController) {
+                homeView.homeMenuView.menuCollectionView.selectItem(at: IndexPath(item: selectedIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+                
+                let attributes = homeView.homeMenuView.menuCollectionView.layoutAttributesForItem(at: IndexPath(item: selectedIndex, section: 0))
+                let leading = attributes!.frame.origin.x
+                homeView.homeMenuView.updateUnderLine(index: selectedIndex, padding: leading)
+            }
+        }
     }
 }
 
