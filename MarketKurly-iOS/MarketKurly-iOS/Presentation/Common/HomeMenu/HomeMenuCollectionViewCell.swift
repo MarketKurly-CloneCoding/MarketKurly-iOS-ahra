@@ -61,4 +61,12 @@ extension HomeMenuCollectionViewCell {
             $0.centerY.equalToSuperview()
         }
     }
+    
+    func setCellSelected(isSelected: Bool) {
+        if isSelected {
+            menuTitleLabel.textColor = .KurlyPurple
+        } else {
+            menuTitleLabel.textColor = .Gray200
+        }
+    }
 }

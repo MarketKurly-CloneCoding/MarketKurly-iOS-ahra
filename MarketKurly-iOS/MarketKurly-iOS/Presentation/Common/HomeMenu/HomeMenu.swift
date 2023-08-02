@@ -11,6 +11,8 @@ import SnapKit
 
 final class HomeMenu: UIView {
     
+    var selectedIndex: Int = 0
+    
     private let menuLabels = MenuPageType.allCases.map{ $0.rawValue }
     
     private var menuCollectionView: UICollectionView = {
@@ -110,6 +112,7 @@ extension HomeMenu: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: HomeMenuCollectionViewCell.identifier, for: indexPath) as? HomeMenuCollectionViewCell else { return HomeMenuCollectionViewCell()}
         cell.title = menuLabels[indexPath.item]
+        cell.setCellSelected(isSelected: selectedIndex == indexPath.item)
         return cell
     }
 }
@@ -121,6 +124,8 @@ extension HomeMenu: UICollectionViewDelegate {
             let leading = attributes.frame.origin.x
             updateUnderLine(index: indexPath.item, padding: leading)
         }
+        selectedIndex = indexPath.item
+        collectionView.reloadData()
     }
 }
 
