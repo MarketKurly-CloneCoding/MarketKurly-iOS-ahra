@@ -70,8 +70,17 @@ extension HomeViewController {
     }
     
     func setDelegate() {
+        homeView.homeMenuView.homeMenuDelegate = self
+        
         pageViewController.delegate = self
         pageViewController.dataSource = self
+    }
+}
+
+extension HomeViewController: HomeMenuDelegate {
+    func didSelectMenu(at index: Int) {
+        let selectedViewController = dataViewController[index]
+        pageViewController.setViewControllers([selectedViewController], direction: .forward, animated: true, completion: nil)
     }
 }
 

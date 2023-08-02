@@ -9,9 +9,15 @@ import UIKit
 
 import SnapKit
 
+protocol HomeMenuDelegate: AnyObject {
+    func didSelectMenu(at index: Int)
+}
+
 final class HomeMenu: UIView {
     
     var selectedIndex: Int = 0
+    
+    weak var homeMenuDelegate: HomeMenuDelegate?
     
     private let menuLabels = MenuPageType.allCases.map{ $0.rawValue }
     
@@ -125,6 +131,7 @@ extension HomeMenu: UICollectionViewDelegate {
             updateUnderLine(index: indexPath.item, padding: leading)
         }
         selectedIndex = indexPath.item
+        homeMenuDelegate?.didSelectMenu(at: indexPath.item)
         collectionView.reloadData()
     }
 }
