@@ -9,6 +9,8 @@ import UIKit
 
 import SnapKit
 
+// MARK: - Protocol
+
 protocol HomeMenuDelegate: AnyObject {
     func didSelectMenu(at index: Int)
 }
@@ -20,6 +22,8 @@ final class HomeMenu: UIView {
     weak var homeMenuDelegate: HomeMenuDelegate?
     
     private let menuLabels = MenuPageType.allCases.map{ $0.rawValue }
+    
+    // MARK: - UI Components
     
     private var menuCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -44,6 +48,8 @@ final class HomeMenu: UIView {
         return view
     }()
     
+    // MARK: - Life Cycles
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -59,6 +65,8 @@ final class HomeMenu: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - Extensions
 
 extension HomeMenu {
     func setUI() {

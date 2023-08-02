@@ -45,6 +45,8 @@ final class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
+
 extension HomeViewController {
     func setHierarchy() {
         addChild(pageViewController)
