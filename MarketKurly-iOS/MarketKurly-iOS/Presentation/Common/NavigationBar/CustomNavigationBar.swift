@@ -11,6 +11,8 @@ import SnapKit
 
 final class CustomNavigationBar: UIView {
     
+    // MARK: - UI Components
+    
     public var isNotLeftButtonIncluded: Bool {
         get { !leftButton.isHidden }
         set { leftButton.isHidden = !newValue
@@ -93,10 +95,11 @@ final class CustomNavigationBar: UIView {
         return view
     }()
     
+    // MARK: - Life Cycles
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        setUI()
         setLayout()
     }
     
@@ -105,19 +108,12 @@ final class CustomNavigationBar: UIView {
     }
 }
 
+// MARK: - Extensions
+
 extension CustomNavigationBar {
-//    func setUI() {
-//        self.backgroundColor = .PrimaryPurple
-//    }
-    
     func setLayout() {
-//        self.addSubviews(leftButton, logoImageView, detailTitleLabel, naviButton, cartButton)
         navigationView.addSubviews(leftButton, logoImageView, detailTitleLabel,searchTitleLabel, naviButton, cartButton)
         self.addSubviews(backView, navigationView)
-//
-//        self.snp.makeConstraints {
-//            $0.height.equalTo(94)
-//        }
         
         backView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
