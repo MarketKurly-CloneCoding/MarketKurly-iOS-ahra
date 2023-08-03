@@ -67,6 +67,7 @@ extension HomeViewController {
         pageViewController.view.snp.makeConstraints {
             $0.top.equalTo(homeView.homeMenuView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
+            $0.width.equalTo(SizeLiterals.Screen.screenWidth)
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 592 / 812)
         }
     }
