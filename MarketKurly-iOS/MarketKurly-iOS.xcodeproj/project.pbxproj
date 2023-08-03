@@ -252,6 +252,11 @@
 			children = (
 				A43BFA252A780BC400DCF7B8 /* View */,
 				A43BFA242A780BBE00DCF7B8 /* ViewController */,
+				A43BFA342A79568900DCF7B8 /* Recommend */,
+				A43BFA382A7956AE00DCF7B8 /* NewItem */,
+				A43BFA372A7956A500DCF7B8 /* BestItem */,
+				A43BFA362A79569D00DCF7B8 /* Shopping */,
+				A43BFA352A79569400DCF7B8 /* Benefit */,
 				A43BF9E02A76463B00DCF7B8 /* Home.swift */,
 			);
 			path = HomeScene;
@@ -330,11 +335,6 @@
 			isa = PBXGroup;
 			children = (
 				A43BFA082A77C6B700DCF7B8 /* HomeViewController.swift */,
-				A43BFA342A79568900DCF7B8 /* Recommend */,
-				A43BFA382A7956AE00DCF7B8 /* NewItem */,
-				A43BFA372A7956A500DCF7B8 /* BestItem */,
-				A43BFA362A79569D00DCF7B8 /* Shopping */,
-				A43BFA352A79569400DCF7B8 /* Benefit */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
