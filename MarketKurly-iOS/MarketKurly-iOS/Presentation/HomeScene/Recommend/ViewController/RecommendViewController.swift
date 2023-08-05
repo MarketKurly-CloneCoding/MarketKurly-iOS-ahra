@@ -15,7 +15,7 @@ final class RecommendViewController: UIViewController {
 
     @frozen
     private enum Section: CaseIterable {
-        case mainBanner, recommend
+        case mainBanner, recommend, smallBanner
     }
     
     private var homeEntity: [HomeEntity] = HomeEntity.dummyData()
@@ -71,6 +71,9 @@ extension RecommendViewController: UICollectionViewDataSource {
             let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.setDataBind(model: homeEntity[indexPath.item])
             return cell
+        case .smallBanner:
+            let cell = SmallBannerCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            return cell
         }
     }
     
@@ -81,6 +84,8 @@ extension RecommendViewController: UICollectionViewDataSource {
             return 5
         case .recommend:
             return homeEntity.count
+        case .smallBanner:
+            return 1
         }
     }
     
@@ -94,6 +99,9 @@ extension RecommendViewController: UICollectionViewDataSource {
             let headerView = HeaderCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
             headerView.setTitle(title: "이 상품 어때요?")
             return headerView
+        case .smallBanner:
+            let view = UICollectionReusableView()
+            return view
         }
     }
 }

@@ -15,7 +15,7 @@ final class RecommendView: UIView {
     
     @frozen
     private enum Section: CaseIterable {
-        case mainBanner, recommend
+        case mainBanner, recommend, smallBanner
     }
     
     // MARK: - UI Components
@@ -63,6 +63,7 @@ extension RecommendView {
         MainBannerCollectionViewCell.register(target: recommendCollectionView)
         HeaderCollectionReusableView.register(target: recommendCollectionView)
         RecommendCollectionViewCell.register(target: recommendCollectionView)
+        SmallBannerCollectionViewCell.register(target: recommendCollectionView)
     }
     
     func setSectionLayout() -> UICollectionViewLayout {
@@ -73,6 +74,8 @@ extension RecommendView {
                 return self.getLayoutMainBanner()
             case .recommend:
                 return self.getLayoutRecommend()
+            case .smallBanner:
+                return self.getLayoutSmallBanner()
             }
         }
     }
@@ -102,13 +105,13 @@ extension RecommendView {
     func getLayoutRecommend() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .absolute(150),
-            heightDimension: .absolute(278)
+            heightDimension: .absolute(275)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(316/375),
-            heightDimension: .absolute(318)
+            heightDimension: .absolute(275)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -131,6 +134,27 @@ extension RecommendView {
         section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [header]
         
+        return section
+    }
+    
+    func getLayoutSmallBanner() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(100)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 22, leading: 0, bottom: 0, trailing: 0)
         return section
     }
 }

@@ -97,7 +97,7 @@ extension RecommendCollectionViewCell {
         }
         
         salePercent.snp.makeConstraints {
-            $0.top.equalTo(productTitle.snp.bottom)
+            $0.top.equalTo(productTitle.snp.bottom).offset(2)
             $0.leading.equalToSuperview()
         }
         
@@ -107,7 +107,7 @@ extension RecommendCollectionViewCell {
         }
         
         originalPrice.snp.makeConstraints {
-            $0.top.equalTo(salePercent.snp.bottom)
+            $0.top.equalTo(salePercent.snp.bottom).offset(2)
             $0.leading.equalToSuperview()
         }
     }
