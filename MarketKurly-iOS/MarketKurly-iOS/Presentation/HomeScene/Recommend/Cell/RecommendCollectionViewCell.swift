@@ -32,6 +32,7 @@ final class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewR
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .Gray100
         label.numberOfLines = 0
+        label.lineBreakMode = .byCharWrapping
         return label
     }()
     
