@@ -61,6 +61,7 @@ extension RecommendView {
     
     private func registerCell() {
         MainBannerCollectionViewCell.register(target: recommendCollectionView)
+        HeaderCollectionReusableView.register(target: recommendCollectionView)
         RecommendCollectionViewCell.register(target: recommendCollectionView)
     }
     
@@ -107,7 +108,7 @@ extension RecommendView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(316/375),
-            heightDimension: .absolute(278)
+            heightDimension: .absolute(318)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -115,9 +116,20 @@ extension RecommendView {
         )
         group.interItemSpacing = .fixed(8)
         
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(52)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 16, bottom: 0, trailing: 16)
         section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [header]
         
         return section
     }

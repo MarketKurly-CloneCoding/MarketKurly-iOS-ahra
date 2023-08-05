@@ -53,6 +53,7 @@
 		A43BFA572A7BFBFB00DCF7B8 /* MainBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA562A7BFBFB00DCF7B8 /* MainBannerCollectionViewCell.swift */; };
 		A43BFA592A7C0C2E00DCF7B8 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA582A7C0C2E00DCF7B8 /* RecommendCollectionViewCell.swift */; };
 		A43BFA5D2A7E2D6C00DCF7B8 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA5C2A7E2D6C00DCF7B8 /* Int+.swift */; };
+		A43BFA5F2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA5E2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		A43BFA562A7BFBFB00DCF7B8 /* MainBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		A43BFA582A7C0C2E00DCF7B8 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		A43BFA5C2A7E2D6C00DCF7B8 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		A43BFA5E2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +463,7 @@
 			children = (
 				A43BFA562A7BFBFB00DCF7B8 /* MainBannerCollectionViewCell.swift */,
 				A43BFA582A7C0C2E00DCF7B8 /* RecommendCollectionViewCell.swift */,
+				A43BFA5E2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				A43BF9E12A76463B00DCF7B8 /* Home.swift in Sources */,
 				A43BFA2B2A78161200DCF7B8 /* SearchView.swift in Sources */,
 				A43BFA332A78BED000DCF7B8 /* TabBarItem.swift in Sources */,
+				A43BFA5F2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift in Sources */,
 				A43BF9DD2A76460D00DCF7B8 /* Font.swift in Sources */,
 				A43BF9FD2A77BC1B00DCF7B8 /* NSObject+.swift in Sources */,
 				A43BFA0E2A77C81B00DCF7B8 /* UIImage+.swift in Sources */,

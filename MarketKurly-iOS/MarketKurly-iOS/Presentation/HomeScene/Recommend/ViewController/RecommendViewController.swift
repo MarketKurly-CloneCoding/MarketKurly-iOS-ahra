@@ -83,6 +83,19 @@ extension RecommendViewController: UICollectionViewDataSource {
             return homeEntity.count
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let sectionType = SectionType.allCases[indexPath.section]
+        switch sectionType {
+        case .mainBanner:
+            let view = UICollectionReusableView()
+            return view
+        case .recommend:
+            let headerView = HeaderCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
+            headerView.setTitle(title: "이 상품 어때요?")
+            return headerView
+        }
+    }
 }
 
 extension RecommendViewController: UICollectionViewDelegateFlowLayout {
