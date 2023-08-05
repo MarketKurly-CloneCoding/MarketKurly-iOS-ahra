@@ -15,7 +15,7 @@ final class RecommendView: UIView {
     
     @frozen
     private enum Section: CaseIterable {
-        case mainBanner
+        case mainBanner, recommend
     }
     
     // MARK: - UI Components
@@ -61,6 +61,7 @@ extension RecommendView {
     
     private func registerCell() {
         MainBannerCollectionViewCell.register(target: recommendCollectionView)
+        RecommendCollectionViewCell.register(target: recommendCollectionView)
     }
     
     func setSectionLayout() -> UICollectionViewLayout {
@@ -69,6 +70,8 @@ extension RecommendView {
             switch sectionType {
             case .mainBanner:
                 return self.getLayoutMainBanner()
+            case .recommend:
+                return self.getLayoutRecommend()
             }
         }
     }
@@ -91,6 +94,30 @@ extension RecommendView {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .paging
+        
+        return section
+    }
+    
+    func getLayoutRecommend() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(150),
+            heightDimension: .absolute(278)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(316/375),
+            heightDimension: .absolute(278)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        group.interItemSpacing = .fixed(8)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
+        section.orthogonalScrollingBehavior = .continuous
         
         return section
     }

@@ -15,8 +15,10 @@ final class RecommendViewController: UIViewController {
 
     @frozen
     private enum Section: CaseIterable {
-        case mainBanner
+        case mainBanner, recommend
     }
+    
+    private var homeEntity: [HomeEntity] = HomeEntity.dummyData()
     
     // MARK: - UI Components
     
@@ -65,6 +67,10 @@ extension RecommendViewController: UICollectionViewDataSource {
         case .mainBanner:
             let cell = MainBannerCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             return cell
+        case .recommend:
+            let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.setDataBind(model: homeEntity[indexPath.item])
+            return cell
         }
     }
     
@@ -73,6 +79,8 @@ extension RecommendViewController: UICollectionViewDataSource {
         switch sectionType {
         case .mainBanner:
             return 5
+        case .recommend:
+            return homeEntity.count
         }
     }
 }
