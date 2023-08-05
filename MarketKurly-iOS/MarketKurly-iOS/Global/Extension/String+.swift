@@ -19,4 +19,11 @@ extension String {
          label.sizeToFit()
          return label.frame.width + addPadding
      }
+    
+    // 취소선 넣어주는 함수
+    func strikeThrough() -> NSAttributedString {
+        let attributeString = NSMutableAttributedString(string: self)
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+        return attributeString
+    }
  }

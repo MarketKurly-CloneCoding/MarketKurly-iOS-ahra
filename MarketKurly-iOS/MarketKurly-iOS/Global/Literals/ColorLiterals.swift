@@ -9,8 +9,16 @@ import UIKit
 
 extension UIColor {
     
+    static var Gray100: UIColor {
+        return UIColor(hex: "#333333")
+    }
+    
     static var Gray200: UIColor {
         return UIColor(hex: "#666666")
+    }
+    
+    static var Gray300: UIColor {
+        return UIColor(hex: "#999999")
     }
     
     static var Gray400: UIColor {
@@ -27,5 +35,9 @@ extension UIColor {
     
     static var KurlyBlack: UIColor {
         return UIColor(hex: "#000000")
+    }
+    
+    static var KurlyOrange: UIColor {
+        return UIColor(hex: "#FA622F")
     }
 }
