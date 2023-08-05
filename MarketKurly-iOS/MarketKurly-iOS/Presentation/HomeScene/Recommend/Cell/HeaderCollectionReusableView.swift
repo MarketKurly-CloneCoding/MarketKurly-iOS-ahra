@@ -28,12 +28,18 @@ final class HeaderCollectionReusableView: UICollectionReusableView, UICollection
     }()
     
     lazy var headerButton: UIButton = {
+        var config = UIButton.Configuration.plain()
+        var titleAttribute = AttributedString.init("전체보기")
+        titleAttribute.foregroundColor = .KurlyPurple100
+        titleAttribute.font = .systemFont(ofSize: 14, weight: .regular)
+        config.attributedTitle = titleAttribute
+        config.image = ImageLiterals.Home.ic_go
+        config.imagePlacement = .trailing
+        
         let button = UIButton()
-        button.setTitle("전체보기", for: .normal)
-        button.titleLabel?.textColor = .KurlyPurple100
-        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
-        button.setImage(ImageLiterals.Home.ic_go, for: .normal)
+        button.configuration = config
         button.isHidden = true
+        button.sizeToFit()
         return button
     }()
     
@@ -66,8 +72,10 @@ extension HeaderCollectionReusableView {
         }
         
         headerButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(-15)
+            $0.width.equalTo(100)
+            $0.height.equalTo(20)
         }
     }
     
