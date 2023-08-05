@@ -15,7 +15,7 @@ final class RecommendView: UIView {
     
     @frozen
     private enum Section: CaseIterable {
-        case mainBanner, recommend, smallBanner
+        case mainBanner, recommend, smallBanner, sale
     }
     
     // MARK: - UI Components
@@ -64,6 +64,7 @@ extension RecommendView {
         HeaderCollectionReusableView.register(target: recommendCollectionView)
         RecommendCollectionViewCell.register(target: recommendCollectionView)
         SmallBannerCollectionViewCell.register(target: recommendCollectionView)
+        SaleCollectionViewCell.register(target: recommendCollectionView)
     }
     
     func setSectionLayout() -> UICollectionViewLayout {
@@ -76,6 +77,8 @@ extension RecommendView {
                 return self.getLayoutRecommend()
             case .smallBanner:
                 return self.getLayoutSmallBanner()
+            case .sale:
+                return self.getLayoutSale()
             }
         }
     }
@@ -130,7 +133,7 @@ extension RecommendView {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 16, bottom: 0, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 16, bottom: 0, trailing: 10)
         section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [header]
         
@@ -155,6 +158,41 @@ extension RecommendView {
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 22, leading: 0, bottom: 0, trailing: 0)
+        return section
+    }
+    
+    func getLayoutSale() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(150),
+            heightDimension: .absolute(275)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(316/375),
+            heightDimension: .absolute(275)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        group.interItemSpacing = .fixed(8)
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(52)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 16, bottom: 20, trailing: 10)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [header]
+        
         return section
     }
 }

@@ -55,6 +55,8 @@
 		A43BFA5D2A7E2D6C00DCF7B8 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA5C2A7E2D6C00DCF7B8 /* Int+.swift */; };
 		A43BFA5F2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA5E2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift */; };
 		A43BFA612A7E446800DCF7B8 /* SmallBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA602A7E446800DCF7B8 /* SmallBannerCollectionViewCell.swift */; };
+		A43BFA632A7E4BDB00DCF7B8 /* SaleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA622A7E4BDB00DCF7B8 /* SaleCollectionViewCell.swift */; };
+		A43BFA652A7E4D7F00DCF7B8 /* SaleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA642A7E4D7F00DCF7B8 /* SaleEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		A43BFA5C2A7E2D6C00DCF7B8 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		A43BFA5E2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		A43BFA602A7E446800DCF7B8 /* SmallBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		A43BFA622A7E4BDB00DCF7B8 /* SaleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCollectionViewCell.swift; sourceTree = "<group>"; };
+		A43BFA642A7E4D7F00DCF7B8 /* SaleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				A43BF9EA2A7646A900DCF7B8 /* HomeEntity.swift */,
+				A43BFA642A7E4D7F00DCF7B8 /* SaleEntity.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				A43BFA582A7C0C2E00DCF7B8 /* RecommendCollectionViewCell.swift */,
 				A43BFA5E2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift */,
 				A43BFA602A7E446800DCF7B8 /* SmallBannerCollectionViewCell.swift */,
+				A43BFA622A7E4BDB00DCF7B8 /* SaleCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				A43BFA482A79594E00DCF7B8 /* HomeMenuItem.swift in Sources */,
 				A43BFA3B2A7956D300DCF7B8 /* RecommendViewController.swift in Sources */,
 				A43BFA3F2A7956ED00DCF7B8 /* BestItemViewController.swift in Sources */,
+				A43BFA652A7E4D7F00DCF7B8 /* SaleEntity.swift in Sources */,
 				A43BFA5D2A7E2D6C00DCF7B8 /* Int+.swift in Sources */,
 				A43BFA092A77C6B700DCF7B8 /* HomeViewController.swift in Sources */,
 				A43BF9EB2A7646A900DCF7B8 /* HomeEntity.swift in Sources */,
@@ -577,6 +584,7 @@
 				A43BF9B42A741E3C00DCF7B8 /* AppDelegate.swift in Sources */,
 				A43BF9E12A76463B00DCF7B8 /* Home.swift in Sources */,
 				A43BFA2B2A78161200DCF7B8 /* SearchView.swift in Sources */,
+				A43BFA632A7E4BDB00DCF7B8 /* SaleCollectionViewCell.swift in Sources */,
 				A43BFA332A78BED000DCF7B8 /* TabBarItem.swift in Sources */,
 				A43BFA612A7E446800DCF7B8 /* SmallBannerCollectionViewCell.swift in Sources */,
 				A43BFA5F2A7E30D900DCF7B8 /* HeaderCollectionReusableView.swift in Sources */,

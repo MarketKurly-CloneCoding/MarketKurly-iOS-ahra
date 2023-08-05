@@ -15,10 +15,11 @@ final class RecommendViewController: UIViewController {
 
     @frozen
     private enum Section: CaseIterable {
-        case mainBanner, recommend, smallBanner
+        case mainBanner, recommend, smallBanner, sale
     }
     
     private var homeEntity: [HomeEntity] = HomeEntity.dummyData()
+    private var saleEntity: [SaleEntity] = SaleEntity.dummyData()
     
     // MARK: - UI Components
     
@@ -74,6 +75,10 @@ extension RecommendViewController: UICollectionViewDataSource {
         case .smallBanner:
             let cell = SmallBannerCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             return cell
+        case .sale:
+            let cell = SaleCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.setDataBind(model: saleEntity[indexPath.item])
+            return cell
         }
     }
     
@@ -86,6 +91,8 @@ extension RecommendViewController: UICollectionViewDataSource {
             return homeEntity.count
         case .smallBanner:
             return 1
+        case .sale:
+            return saleEntity.count
         }
     }
     
@@ -102,6 +109,11 @@ extension RecommendViewController: UICollectionViewDataSource {
         case .smallBanner:
             let view = UICollectionReusableView()
             return view
+        case .sale:
+            let headerView = HeaderCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
+            headerView.setTitle(title: "놓치면 후회할 가격")
+            headerView.isButtonIncluded = true
+            return headerView
         }
     }
 }

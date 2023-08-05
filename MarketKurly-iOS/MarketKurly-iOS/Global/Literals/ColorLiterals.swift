@@ -44,4 +44,9 @@ extension UIColor {
     static var KurlyOrange: UIColor {
         return UIColor(hex: "#FA622F")
     }
+    
+    static var KurlyPink: UIColor {
+        return UIColor(hex: "#E17689")
+    }
+
 }
