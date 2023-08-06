@@ -31,8 +31,8 @@ final class RecommendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setLayout()
         setHierarchy()
+        setLayout()
         setDelegate()
     }
 
