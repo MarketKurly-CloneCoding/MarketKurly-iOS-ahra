@@ -57,6 +57,7 @@
 		A43BFA612A7E446800DCF7B8 /* SmallBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA602A7E446800DCF7B8 /* SmallBannerCollectionViewCell.swift */; };
 		A43BFA632A7E4BDB00DCF7B8 /* SaleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA622A7E4BDB00DCF7B8 /* SaleCollectionViewCell.swift */; };
 		A43BFA652A7E4D7F00DCF7B8 /* SaleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA642A7E4D7F00DCF7B8 /* SaleEntity.swift */; };
+		A43BFA672A81E78400DCF7B8 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFA662A81E78400DCF7B8 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		A43BFA602A7E446800DCF7B8 /* SmallBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		A43BFA622A7E4BDB00DCF7B8 /* SaleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCollectionViewCell.swift; sourceTree = "<group>"; };
 		A43BFA642A7E4D7F00DCF7B8 /* SaleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleEntity.swift; sourceTree = "<group>"; };
+		A43BFA662A81E78400DCF7B8 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				A43BFA0D2A77C81B00DCF7B8 /* UIImage+.swift */,
 				A43BFA4B2A7966CB00DCF7B8 /* String+.swift */,
 				A43BFA5C2A7E2D6C00DCF7B8 /* Int+.swift */,
+				A43BFA662A81E78400DCF7B8 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				A43BFA572A7BFBFB00DCF7B8 /* MainBannerCollectionViewCell.swift in Sources */,
 				A43BFA232A780BBB00DCF7B8 /* HomeView.swift in Sources */,
 				A43BFA412A7956F700DCF7B8 /* ShoppingViewController.swift in Sources */,
+				A43BFA672A81E78400DCF7B8 /* UITextField+.swift in Sources */,
 				A43BFA072A77C4FF00DCF7B8 /* UIColor+.swift in Sources */,
 				A43BFA432A79571A00DCF7B8 /* BenefitViewController.swift in Sources */,
 			);

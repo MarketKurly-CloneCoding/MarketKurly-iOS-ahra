@@ -25,6 +25,10 @@ extension UIColor {
         return UIColor(hex: "#DDDDDD")
     }
     
+    static var Gray500: UIColor {
+        return UIColor(hex: "#F3F3F3")
+    }
+    
     static var KurlyPurple: UIColor {
         return UIColor(hex: "#5F0080")
     }
