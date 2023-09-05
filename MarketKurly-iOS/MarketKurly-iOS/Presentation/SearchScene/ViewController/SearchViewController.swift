@@ -10,13 +10,14 @@ import UIKit
 final class SearchViewController: UIViewController {
     
     private var recentEntity = Recent.dummy()
+    private var suggestEntity = Suggest.dummy()
     
     private typealias SectionType = Section
     
     @frozen
     private enum Section: CaseIterable {
-        case recent
-        // recommend, rising
+        case recent, suggest
+        // rising
     }
     
     // MARK: - UI Components
@@ -80,6 +81,11 @@ extension SearchViewController: UICollectionViewDataSource {
             RecentCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(recentEntity[indexPath.item])
             return cell
+        case .suggest:
+            let cell =
+            SuggestCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureCell(suggestEntity[indexPath.item])
+            return cell
         }
     }
     
@@ -88,6 +94,8 @@ extension SearchViewController: UICollectionViewDataSource {
         switch sectionType {
         case .recent:
             return recentEntity.count
+        case .suggest:
+            return suggestEntity.count
         }
     }
     
@@ -97,7 +105,19 @@ extension SearchViewController: UICollectionViewDataSource {
         case .recent:
             let headerView = SearchHeaderView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
             headerView.setHeaderTitle(title: "최근 검색어")
+            headerView.hideSubTitle(hide: true)
+            return headerView
+        case .suggest:
+            let headerView = SearchHeaderView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
+            headerView.setHeaderTitle(title: "추천 검색어")
+            headerView.hideSubTitle(hide: true)
             return headerView
         }
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return Section.allCases.count
     }
 }

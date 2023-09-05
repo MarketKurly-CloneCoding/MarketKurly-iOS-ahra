@@ -37,6 +37,10 @@ extension UIColor {
         return UIColor(hex: "#650F84")
     }
     
+    static var KurlyPurple300: UIColor {
+        return UIColor(hex: "#FAF2FF")
+    }
+    
     static var KurlyWhite: UIColor {
         return UIColor(hex: "#FFFFFF")
     }
