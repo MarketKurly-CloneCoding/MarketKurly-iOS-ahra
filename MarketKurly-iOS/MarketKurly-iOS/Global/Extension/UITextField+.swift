@@ -16,9 +16,10 @@ extension UITextField {
     }
     
     func addLeftImage(image:UIImage) {
-        let leftimage = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-        leftimage.image = image
-        self.leftView = leftimage
+        let leftPadding: CGFloat = 12
+        let leftImage = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width + leftPadding, height: image.size.height))
+        leftImage.image = image.withTintColor(.Gray300)
+        self.leftView = leftImage
         self.leftViewMode = .always
     }
     
