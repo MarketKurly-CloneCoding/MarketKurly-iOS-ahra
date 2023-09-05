@@ -31,32 +31,6 @@ final class SearchView: UIView {
         return textfield
     }()
     
-//    private let recentTitle: UILabel = {
-//        let label = UILabel()
-//        label.text = "최근 검색어"
-//        label.textColor = .KurlyBlack
-//        label.font = .systemFont(ofSize: 16, weight: .regular)
-//        return label
-//    }()
-    
-//    private let flowLayout: UICollectionViewFlowLayout = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.minimumInteritemSpacing = 12
-//        layout.itemSize.height = 36
-//        layout.scrollDirection = .horizontal
-//        return layout
-//    }()
-//
-//    lazy var recentCollectionView: UICollectionView = {
-//        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-//        collectionView.showsVerticalScrollIndicator = false
-//        collectionView.clipsToBounds = true
-//        collectionView.contentInsetAdjustmentBehavior = .never
-//        collectionView.isUserInteractionEnabled = true
-//        collectionView.allowsSelection = true
-//        return collectionView
-//    }()
-    
     // MARK: - Life Cycles
     
     override init(frame: CGRect) {
@@ -64,7 +38,6 @@ final class SearchView: UIView {
         
         setUI()
         setHiearchy()
-//        registerCell()
         setLayout()
     }
     
@@ -83,10 +56,6 @@ private extension SearchView {
     func setHiearchy() {
         self.addSubviews(navigationBarView, searchField)
     }
-    
-//    func registerCell() {
-//        RecentCollectionViewCell.register(target: recentCollectionView)
-//    }
 
     func setLayout() {
         navigationBarView.snp.makeConstraints {
@@ -101,17 +70,5 @@ private extension SearchView {
             $0.width.equalTo(SizeLiterals.Screen.screenWidth * 343 / 375)
             $0.height.equalTo(44)
         }
-        
-//        recentTitle.snp.makeConstraints {
-//            $0.top.equalTo(searchField.snp.bottom).offset(20)
-//            $0.leading.equalToSuperview().inset(20)
-//        }
-        
-//        recentCollectionView.snp.makeConstraints {
-//            $0.top.equalTo(recentTitle.snp.bottom).offset(16)
-//            $0.leading.equalTo(recentTitle.snp.leading)
-//            $0.trailing.equalToSuperview()
-//            $0.height.equalTo(36)
-//        }
     }
 }
