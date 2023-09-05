@@ -11,13 +11,13 @@ final class SearchViewController: UIViewController {
     
     private var recentEntity = Recent.dummy()
     private var suggestEntity = Suggest.dummy()
+    private var risingEntity = Rising.dummy()
     
     private typealias SectionType = Section
     
     @frozen
     private enum Section: CaseIterable {
-        case recent, suggest
-        // rising
+        case recent, suggest, rising
     }
     
     // MARK: - UI Components
@@ -86,6 +86,11 @@ extension SearchViewController: UICollectionViewDataSource {
             SuggestCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(suggestEntity[indexPath.item])
             return cell
+        case .rising:
+            let cell =
+            RisingCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureCell(risingEntity[indexPath.item])
+            return cell
         }
     }
     
@@ -96,6 +101,8 @@ extension SearchViewController: UICollectionViewDataSource {
             return recentEntity.count
         case .suggest:
             return suggestEntity.count
+        case .rising:
+            return risingEntity.count
         }
     }
     
@@ -111,6 +118,11 @@ extension SearchViewController: UICollectionViewDataSource {
             let headerView = SearchHeaderView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
             headerView.setHeaderTitle(title: "추천 검색어")
             headerView.hideSubTitle(hide: true)
+            return headerView
+        case .rising:
+            let headerView = SearchHeaderView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
+            headerView.setHeaderTitle(title: "급상승 검색어")
+            headerView.hideSubTitle(hide: false)
             return headerView
         }
     }

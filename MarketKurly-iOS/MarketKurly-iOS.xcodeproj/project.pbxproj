@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A408BCD82AA76D2C00AABB46 /* SuggestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408BCD72AA76D2C00AABB46 /* SuggestCollectionViewCell.swift */; };
 		A408BCDA2AA76E4800AABB46 /* SuggestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408BCD92AA76E4800AABB46 /* SuggestEntity.swift */; };
+		A408BCDC2AA777DA00AABB46 /* RisingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408BCDB2AA777DA00AABB46 /* RisingCollectionViewCell.swift */; };
+		A408BCDE2AA7791100AABB46 /* RisingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408BCDD2AA7791100AABB46 /* RisingEntity.swift */; };
 		A43BF9B42A741E3C00DCF7B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9B32A741E3C00DCF7B8 /* AppDelegate.swift */; };
 		A43BF9B62A741E3C00DCF7B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9B52A741E3C00DCF7B8 /* SceneDelegate.swift */; };
 		A43BF9B82A741E3C00DCF7B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BF9B72A741E3C00DCF7B8 /* ViewController.swift */; };
@@ -69,6 +71,8 @@
 /* Begin PBXFileReference section */
 		A408BCD72AA76D2C00AABB46 /* SuggestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestCollectionViewCell.swift; sourceTree = "<group>"; };
 		A408BCD92AA76E4800AABB46 /* SuggestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestEntity.swift; sourceTree = "<group>"; };
+		A408BCDB2AA777DA00AABB46 /* RisingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisingCollectionViewCell.swift; sourceTree = "<group>"; };
+		A408BCDD2AA7791100AABB46 /* RisingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisingEntity.swift; sourceTree = "<group>"; };
 		A43BF9B02A741E3C00DCF7B8 /* MarketKurly-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarketKurly-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43BF9B32A741E3C00DCF7B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A43BF9B52A741E3C00DCF7B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -319,6 +323,7 @@
 				A43BF9EE2A7646B800DCF7B8 /* SearchEntity.swift */,
 				A440B9332AA199760035EBC5 /* RecentEntity.swift */,
 				A408BCD92AA76E4800AABB46 /* SuggestEntity.swift */,
+				A408BCDD2AA7791100AABB46 /* RisingEntity.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 			children = (
 				A440B9312AA196AA0035EBC5 /* RecentCollectionViewCell.swift */,
 				A408BCD72AA76D2C00AABB46 /* SuggestCollectionViewCell.swift */,
+				A408BCDB2AA777DA00AABB46 /* RisingCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -597,6 +603,7 @@
 				A43BFA3F2A7956ED00DCF7B8 /* BestItemViewController.swift in Sources */,
 				A43BFA652A7E4D7F00DCF7B8 /* SaleEntity.swift in Sources */,
 				A43BFA5D2A7E2D6C00DCF7B8 /* Int+.swift in Sources */,
+				A408BCDE2AA7791100AABB46 /* RisingEntity.swift in Sources */,
 				A43BFA092A77C6B700DCF7B8 /* HomeViewController.swift in Sources */,
 				A43BF9EB2A7646A900DCF7B8 /* HomeEntity.swift in Sources */,
 				A408BCD82AA76D2C00AABB46 /* SuggestCollectionViewCell.swift in Sources */,
@@ -628,6 +635,7 @@
 				A43BF9E32A76464000DCF7B8 /* Detail.swift in Sources */,
 				A43BFA592A7C0C2E00DCF7B8 /* RecommendCollectionViewCell.swift in Sources */,
 				A43BF9D92A7645C600DCF7B8 /* UICollectionViewRegisterable.swift in Sources */,
+				A408BCDC2AA777DA00AABB46 /* RisingCollectionViewCell.swift in Sources */,
 				A43BF9B62A741E3C00DCF7B8 /* SceneDelegate.swift in Sources */,
 				A4B99A482AA6F3F900204F10 /* SearchCollectionView.swift in Sources */,
 				A43BF9D72A7645AC00DCF7B8 /* ImageLiterals.swift in Sources */,

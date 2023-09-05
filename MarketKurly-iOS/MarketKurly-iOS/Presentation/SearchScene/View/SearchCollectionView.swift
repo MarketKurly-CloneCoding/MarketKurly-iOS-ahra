@@ -15,7 +15,7 @@ final class SearchCollectionView: UIView {
     
     @frozen
     private enum Section: CaseIterable {
-        case recent, suggest
+        case recent, suggest, rising
     }
 
     // MARK: - UI Components
@@ -67,6 +67,7 @@ private extension SearchCollectionView {
         SearchHeaderView.register(target: collectionView)
         RecentCollectionViewCell.register(target: collectionView)
         SuggestCollectionViewCell.register(target: collectionView)
+        RisingCollectionViewCell.register(target: collectionView)
     }
     
     func setSectionLayout() -> UICollectionViewLayout {
@@ -77,6 +78,8 @@ private extension SearchCollectionView {
                 return self.getLayoutRecent()
             case .suggest:
                 return self.getLayoutSuggest()
+            case .rising:
+                return self.getLayoutRising()
             }
         }
     }
@@ -143,9 +146,43 @@ private extension SearchCollectionView {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 32, trailing: 0)
         section.orthogonalScrollingBehavior = .none
         section.interGroupSpacing = 12
+        section.boundarySupplementaryItems = [header]
+        return section
+    }
+    
+    func getLayoutRising() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(45)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(100)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        group.interItemSpacing = .fixed(12)
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(60)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 19, bottom: 48, trailing: 19)
+        section.orthogonalScrollingBehavior = .none
         section.boundarySupplementaryItems = [header]
         return section
     }
