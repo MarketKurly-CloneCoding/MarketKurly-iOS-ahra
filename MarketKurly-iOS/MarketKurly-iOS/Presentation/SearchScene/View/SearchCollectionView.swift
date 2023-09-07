@@ -156,7 +156,7 @@ private extension SearchCollectionView {
     func getLayoutRising() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(45)
+            heightDimension: .absolute(49)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
@@ -168,7 +168,6 @@ private extension SearchCollectionView {
             layoutSize: groupSize,
             subitems: [item]
         )
-        group.interItemSpacing = .fixed(12)
         
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),

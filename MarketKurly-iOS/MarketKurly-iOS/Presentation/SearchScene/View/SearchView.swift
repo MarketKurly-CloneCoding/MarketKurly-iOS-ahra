@@ -20,15 +20,18 @@ final class SearchView: UIView {
         return view
     }()
     
-    private let searchField: UITextField = {
-        let textfield = UITextField()
-        textfield.placeholder = "검색어를 입력해주세요"
-        textfield.font = .systemFont(ofSize: 16, weight: .regular)
-        textfield.layer.cornerRadius = 4
-        textfield.backgroundColor = .Gray500
-        textfield.addLeftImage(image: ImageLiterals.Search.search)
-        textfield.setPlaceholderColor(.Gray300)
-        return textfield
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.backgroundImage = UIImage()
+        searchBar.clipsToBounds = true
+        searchBar.layer.cornerRadius = 4
+        searchBar.searchTextField.backgroundColor = .Gray500
+        searchBar.backgroundColor = .clear
+        searchBar.placeholder = "검색어를 입력해주세요"
+        searchBar.searchTextField.setPlaceholderColor(.Gray300)
+        searchBar.searchTextField.font = .systemFont(ofSize: 16, weight: .regular)
+        searchBar.setImage(ImageLiterals.Search.search, for: .search, state: .normal)
+        return searchBar
     }()
     
     // MARK: - Life Cycles
@@ -54,7 +57,7 @@ private extension SearchView {
     }
     
     func setHiearchy() {
-        self.addSubviews(navigationBarView, searchField)
+        self.addSubviews(navigationBarView, searchBar)
     }
 
     func setLayout() {
@@ -64,10 +67,9 @@ private extension SearchView {
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 94 / 812)
         }
         
-        searchField.snp.makeConstraints {
+        searchBar.snp.makeConstraints {
             $0.top.equalTo(navigationBarView.snp.bottom).offset(10)
-            $0.centerX.equalToSuperview()
-            $0.width.equalTo(SizeLiterals.Screen.screenWidth * 343 / 375)
+            $0.leading.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(44)
         }
     }
