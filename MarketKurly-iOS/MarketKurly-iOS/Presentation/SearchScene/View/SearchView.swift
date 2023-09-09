@@ -20,12 +20,27 @@ final class SearchView: UIView {
         return view
     }()
     
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.backgroundImage = UIImage()
+        searchBar.clipsToBounds = true
+        searchBar.layer.cornerRadius = 4
+        searchBar.searchTextField.backgroundColor = .Gray500
+        searchBar.backgroundColor = .clear
+        searchBar.placeholder = "검색어를 입력해주세요"
+        searchBar.searchTextField.setPlaceholderColor(.Gray300)
+        searchBar.searchTextField.font = .systemFont(ofSize: 16, weight: .regular)
+        searchBar.setImage(ImageLiterals.Search.search, for: .search, state: .normal)
+        return searchBar
+    }()
+    
     // MARK: - Life Cycles
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setUI()
+        setHiearchy()
         setLayout()
     }
     
@@ -41,14 +56,21 @@ private extension SearchView {
         self.backgroundColor = .KurlyWhite
     }
     
+    func setHiearchy() {
+        self.addSubviews(navigationBarView, searchBar)
+    }
+
     func setLayout() {
-        self.addSubview(navigationBarView)
-        
         navigationBarView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(SizeLiterals.Screen.screenHeight * 94 / 812)
         }
+        
+        searchBar.snp.makeConstraints {
+            $0.top.equalTo(navigationBarView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.height.equalTo(44)
+        }
     }
 }
-

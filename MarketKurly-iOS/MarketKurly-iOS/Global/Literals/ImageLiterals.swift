@@ -33,4 +33,8 @@ enum ImageLiterals {
         static var btn_cart: UIImage { .load(name: "btn_cart") }
         static var ic_go: UIImage { .load(name: "go") }
     }
+    
+    enum Search {
+        static var search: UIImage { .load(name: "ic_search") }
+    }
 }
